@@ -9,8 +9,8 @@ let activeSwiper = null;
 function renderCard(product) {
   return `
     <div class="product-card" data-id="${product.id}">
-      <div class="bg-audi-black/40 p-6">
-        <img src="${product.image}" alt="${product.name}" class="w-full h-auto" />
+      <div class="w-full aspect-[4/3] overflow-hidden bg-audi-black/40">
+        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover" loading="lazy" />
       </div>
       <div class="p-6">
         <h3 class="text-lg font-bold mb-3">${product.name}</h3>
