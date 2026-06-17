@@ -12,8 +12,8 @@ npm install
 npm run dev
 ```
 
-Le site est servi sur `http://localhost:5173/audi-elite/` (le préfixe
-`/audi-elite/` vient du `base` configuré dans `vite.config.js` pour GitHub
+Le site est servi sur `http://localhost:5173/Audi-Elite/` (le préfixe
+`/Audi-Elite/` vient du `base` configuré dans `vite.config.js` pour GitHub
 Pages — voir plus bas).
 
 ## Déploiement (GitHub Pages)
@@ -28,7 +28,7 @@ aller dans `Settings > Pages > Build and deployment > Source` et choisir
 **"GitHub Actions"**. Une fois fait, le site est en ligne à :
 
 ```
-https://lrftn.github.io/audi-elite/
+https://lrftn.github.io/Audi-Elite/
 ```
 
 et se met à jour automatiquement à chaque push.
