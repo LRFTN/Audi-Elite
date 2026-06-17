@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: default;
+}
+
+/* ===== Navbar ===== */
+#navbar.scrolled {
+  background: rgba(14, 14, 17, 0.75);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: #e3001b;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+#mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-link {
+  color: #f4f4f6;
+  transition: color 0.2s;
+}
+.mobile-link:hover {
+  color: #e3001b;
+}
+
+/* ===== Trust strip ===== */
+.trust-item:hover .trust-icon {
+  box-shadow: 0 0 30px rgba(227, 0, 27, 0.4);
+  transform: translateY(-3px);
+}
+.trust-icon {
+  transition: all 0.3s ease;
+}
+
+/* ===== Virtual Cockpit ===== */
+.gauge-wrap svg {
+  display: block;
+}
+
+.mode-btn {
+  color: #9a9aa2;
+}
+.mode-btn.active {
+  background: #e3001b;
+  color: #fff;
+  box-shadow: 0 0 24px rgba(227, 0, 27, 0.45);
+}
+
+.feature-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 0.6rem;
+  border-radius: 1rem;
+  background: #24242b;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #9a9aa2;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+.feature-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(227, 0, 27, 0.4);
+}
+.feature-tile .feature-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(227, 0, 27, 0.1);
+  border: 1px solid rgba(227, 0, 27, 0.3);
+  color: #e3001b;
+  transition: all 0.3s ease;
+}
+.feature-tile.active {
+  background: #2a1014;
+  border-color: #e3001b;
+  color: #f4f4f6;
+  box-shadow: 0 0 30px rgba(227, 0, 27, 0.3);
+}
+.feature-tile.active .feature-icon {
+  background: #e3001b;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(227, 0, 27, 0.6);
+}
+
+.cockpit-screen {
+  transition: box-shadow 0.4s ease;
+}
+
+/* ===== Product cards ===== */
+.product-card {
+  background: #24242b;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(227, 0, 27, 0.35);
+  box-shadow: 0 20px 60px -10px rgba(227, 0, 27, 0.25);
+}
+.spec-chip {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #9a9aa2;
+}
+
+.filter-select {
+  background: #24242b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f4f4f6;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  outline: none;
+}
+
+/* ===== Countdown ===== */
+.countdown-box {
+  background: #24242b;
+  border: 1px solid rgba(227, 0, 27, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  min-width: 56px;
+}
+.countdown-box span {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+.countdown-box label {
+  display: block;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9a9aa2;
+  margin-top: 2px;
+}
+
+/* ===== Accordion ===== */
+.accordion-item {
+  background: #24242b;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  color: #f4f4f6;
+}
+.acc-icon {
+  transition: transform 0.3s ease;
+  color: #e3001b;
+  flex-shrink: 0;
+}
+.accordion-item.open .acc-icon {
+  transform: rotate(180deg);
+}
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.accordion-panel p {
+  padding: 0 1.4rem 1.1rem;
+  font-size: 0.85rem;
+  color: #9a9aa2;
+  line-height: 1.6;
+}
+
+/* ===== Forms ===== */
+.form-input {
+  width: 100%;
+  background: #24242b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f4f4f6;
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.85rem;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus {
+  border-color: #e3001b;
+}
+.form-input::placeholder {
+  color: #9a9aa2;
+}
+
+.contact-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(227, 0, 27, 0.12);
+  border: 1px solid rgba(227, 0, 27, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Quick-view modal ===== */
+.config-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.config-swatch.active {
+  border-color: #e3001b;
+  box-shadow: 0 0 0 3px rgba(227, 0, 27, 0.25);
+}
+.wheel-option {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9a9aa2;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.wheel-option.active {
+  border-color: #e3001b;
+  color: #fff;
+  background: rgba(227, 0, 27, 0.1);
+}
+
+.swiper {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0e11;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a42;
+  border-radius: 4px;
+}

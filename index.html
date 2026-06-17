@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="%BASE_URL%assets/favicon-64.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%assets/favicon-180.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AUDI ELITE — premium Audi concessionaris in Gent. Officiële garantie, gekeurde wagens, leasing op maat en levering in heel België." />
+  <title>AUDI ELITE — Driving Progress, Delivering Excellence</title>
+</head>
+<body class="bg-audi-black text-audi-offwhite font-sans antialiased overflow-x-hidden">
+
+  <!-- ===================== LOADER ===================== -->
+  <div id="loader" class="fixed inset-0 z-[100] bg-audi-black flex items-center justify-center">
+    <div class="flex flex-col items-center gap-6">
+      <img src="%BASE_URL%assets/logo/audi-elite-logo-512.png" alt="Audi Elite" id="loader-logo" class="w-28 h-28 opacity-0" />
+      <div id="loader-bar" class="w-40 h-[2px] bg-audi-panel overflow-hidden rounded-full">
+        <div id="loader-bar-fill" class="h-full w-0 bg-audi-red-bright"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== COOKIE BANNER ===================== -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 translate-y-full transition-transform duration-500 bg-audi-charcoal/95 backdrop-blur border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center gap-4 justify-between">
+      <p class="text-sm text-audi-muted leading-relaxed">
+        Wij gebruiken cookies om uw ervaring op AUDI ELITE te verbeteren en ons aanbod te personaliseren. Door verder te
+        surfen, gaat u akkoord met ons gebruik van cookies conform onze <a href="#privacy" class="underline hover:text-audi-red-bright">privacyverklaring</a>.
+      </p>
+      <div class="flex gap-3 shrink-0">
+        <button id="cookie-decline" class="px-5 py-2.5 text-xs uppercase tracking-widest border border-white/20 rounded-full hover:bg-white/5 transition">Weigeren</button>
+        <button id="cookie-accept" class="px-5 py-2.5 text-xs uppercase tracking-widest bg-audi-red-bright rounded-full hover:shadow-red-glow transition">Accepteren</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
+      <a href="#home" class="flex items-center">
+        <img src="%BASE_URL%assets/logo/audi-elite-logo-512.png" alt="Audi Elite logo" class="h-10 w-auto" />
+      </a>
+      <ul class="hidden lg:flex items-center gap-9 text-xs uppercase tracking-[0.18em] text-audi-offwhite/90">
+        <li><a href="#cockpit" class="nav-link hover:text-audi-red-bright transition-colors">Virtual Cockpit</a></li>
+        <li><a href="#webshop" class="nav-link hover:text-audi-red-bright transition-colors">Voertuigen</a></li>
+        <li><a href="#promo" class="nav-link hover:text-audi-red-bright transition-colors">Actie</a></li>
+        <li><a href="#voorwaarden" class="nav-link hover:text-audi-red-bright transition-colors">Voorwaarden</a></li>
+        <li><a href="#contact" class="nav-link hover:text-audi-red-bright transition-colors">Contact</a></li>
+      </ul>
+      <a href="#webshop" class="hidden lg:inline-block px-6 py-2.5 text-xs uppercase tracking-widest bg-audi-red-bright rounded-full hover:shadow-red-glow transition-all duration-300">Ontdek onze wagens</a>
+      <button id="burger" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 group" aria-label="Menu">
+        <span class="block w-6 h-[2px] bg-white transition-all"></span>
+        <span class="block w-6 h-[2px] bg-white transition-all"></span>
+        <span class="block w-4 h-[2px] bg-white self-end transition-all"></span>
+      </button>
+    </nav>
+    <!-- mobile menu -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 top-[72px] bg-audi-black/98 backdrop-blur-lg translate-x-full transition-transform duration-300 z-30">
+      <ul class="flex flex-col items-center gap-8 pt-16 text-sm uppercase tracking-[0.18em]">
+        <li><a href="#cockpit" class="mobile-link">Virtual Cockpit</a></li>
+        <li><a href="#webshop" class="mobile-link">Voertuigen</a></li>
+        <li><a href="#promo" class="mobile-link">Actie</a></li>
+        <li><a href="#voorwaarden" class="mobile-link">Voorwaarden</a></li>
+        <li><a href="#privacy" class="mobile-link">Privacy</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+        <li><a href="#webshop" class="mt-4 px-8 py-3 text-xs bg-audi-red-bright rounded-full">Ontdek onze wagens</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="relative min-h-screen flex flex-col items-center justify-center px-6 bg-radial-glow overflow-hidden">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-audi-red-bright/10 blur-[120px]" id="hero-glow"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.06)_1px,transparent_0)] [background-size:34px_34px] opacity-40"></div>
+      </div>
+
+      <img src="%BASE_URL%assets/logo/audi-elite-logo-512.png" alt="Audi Elite" id="hero-logo" class="w-32 md:w-40 mb-8 opacity-0" />
+
+      <h1 id="hero-title" class="text-center font-extrabold tracking-tight text-4xl md:text-6xl lg:text-7xl leading-[1.05] opacity-0">
+        DRIVING PROGRESS,<br />
+        <span class="text-audi-red-bright">DELIVERING EXCELLENCE</span>
+      </h1>
+      <p id="hero-sub" class="mt-6 max-w-xl text-center text-audi-muted text-sm md:text-base uppercase tracking-[0.2em] opacity-0">
+        Premium Audi concessionaris — Gent, België
+      </p>
+
+      <a href="#webshop" id="hero-cta" class="mt-10 inline-flex items-center gap-3 px-8 py-4 bg-audi-red-bright rounded-full text-xs uppercase tracking-widest font-semibold shadow-red-glow hover:scale-105 hover:shadow-red-glow-lg transition-all duration-300 opacity-0">
+        Ontdek onze wagens
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-audi-muted" id="scroll-cue">
+        <span class="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+        <div class="w-[1px] h-10 bg-gradient-to-b from-audi-red-bright to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- ===================== TRUST STRIP ===================== -->
+    <section class="border-y border-white/5 bg-audi-charcoal/40 py-10">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="trust-item flex flex-col items-center text-center gap-3">
+          <span class="trust-icon w-14 h-14 rounded-full bg-audi-red/15 border border-audi-red-bright/40 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E3001B" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3Z"/></svg>
+          </span>
+          <span class="text-xs uppercase tracking-wider text-audi-offwhite/90">Officiële garantie</span>
+        </div>
+        <div class="trust-item flex flex-col items-center text-center gap-3">
+          <span class="trust-icon w-14 h-14 rounded-full bg-audi-red/15 border border-audi-red-bright/40 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E3001B" stroke-width="1.8"><path d="m4 12 5 5L20 6"/></svg>
+          </span>
+          <span class="text-xs uppercase tracking-wider text-audi-offwhite/90">Gekeurde wagens</span>
+        </div>
+        <div class="trust-item flex flex-col items-center text-center gap-3">
+          <span class="trust-icon w-14 h-14 rounded-full bg-audi-red/15 border border-audi-red-bright/40 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E3001B" stroke-width="1.8"><rect x="3" y="6" width="14" height="11" rx="1.5"/><path d="M17 10h3l1.5 3V17H17"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="17.5" cy="17.5" r="1.5"/></svg>
+          </span>
+          <span class="text-xs uppercase tracking-wider text-audi-offwhite/90">Leasing op maat</span>
+        </div>
+        <div class="trust-item flex flex-col items-center text-center gap-3">
+          <span class="trust-icon w-14 h-14 rounded-full bg-audi-red/15 border border-audi-red-bright/40 flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E3001B" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </span>
+          <span class="text-xs uppercase tracking-wider text-audi-offwhite/90">Levering in heel België</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== VIRTUAL COCKPIT ===================== -->
+    <section id="cockpit" class="relative py-28 px-6 bg-audi-black overflow-hidden">
+      <div class="absolute inset-0 -z-10 bg-radial-glow opacity-60"></div>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-audi-red-bright text-xs uppercase tracking-[0.3em]">Audi technologie</span>
+          <h2 class="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">AUDI VIRTUAL COCKPIT</h2>
+          <p class="mt-4 text-audi-muted max-w-2xl mx-auto text-sm md:text-base">
+            Volledig digitaal instrumentenpaneel — verken de technologie die elke AUDI ELITE-wagen tot leven brengt.
+          </p>
+        </div>
+
+        <!-- mode selector -->
+        <div class="flex justify-center mb-12">
+          <div id="mode-selector" class="inline-flex bg-audi-panel/70 border border-white/10 rounded-full p-1.5 gap-1">
+            <button data-mode="comfort" class="mode-btn active px-5 py-2 text-xs uppercase tracking-widest rounded-full transition-all">Comfort</button>
+            <button data-mode="dynamic" class="mode-btn px-5 py-2 text-xs uppercase tracking-widest rounded-full transition-all">Dynamic</button>
+            <button data-mode="efficiency" class="mode-btn px-5 py-2 text-xs uppercase tracking-widest rounded-full transition-all">Efficiency</button>
+          </div>
+        </div>
+
+        <!-- cluster -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr_1fr] gap-6 items-center" id="cluster-grid">
+          <!-- speedometer -->
+          <div class="flex justify-center">
+            <div id="gauge-speed" class="gauge-wrap"></div>
+          </div>
+
+          <!-- central screen -->
+          <div class="cockpit-screen relative rounded-[28px] border border-white/10 bg-gradient-to-b from-audi-charcoal to-audi-black p-6 md:p-8 shadow-2xl">
+            <div class="flex items-center justify-between text-[10px] uppercase tracking-widest text-audi-muted mb-4">
+              <span id="screen-clock">--:--</span>
+              <span id="screen-mode" class="text-audi-red-bright font-semibold">Comfort mode</span>
+            </div>
+            <div class="text-center mb-5">
+              <p class="text-[10px] uppercase tracking-[0.25em] text-audi-muted">Geselecteerd model</p>
+              <h3 id="screen-model" class="text-2xl md:text-3xl font-extrabold mt-1">Audi A3 Sportback</h3>
+            </div>
+            <!-- mini map -->
+            <div class="relative w-full h-32 md:h-40 rounded-xl bg-audi-black/60 border border-white/5 overflow-hidden">
+              <svg viewBox="0 0 300 140" class="w-full h-full">
+                <path d="M10 120 C 60 40, 120 110, 160 50 S 260 20, 290 70" stroke="#E3001B" stroke-width="2.5" fill="none" stroke-dasharray="6 5" opacity="0.7"/>
+                <circle id="nav-dot" cx="10" cy="120" r="5" fill="#E3001B">
+                  <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              <span class="absolute bottom-2 right-3 text-[9px] uppercase tracking-widest text-audi-muted">Audi connect navigatie</span>
+            </div>
+            <p id="screen-feature-desc" class="mt-5 text-xs text-audi-muted text-center min-h-[32px] leading-relaxed transition-opacity"></p>
+          </div>
+
+          <!-- rpm -->
+          <div class="flex justify-center">
+            <div id="gauge-rpm" class="gauge-wrap"></div>
+          </div>
+        </div>
+
+        <!-- feature tiles -->
+        <div class="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4" id="feature-tiles">
+          <button class="feature-tile" data-feature="cockpit" data-desc="Volledig configureerbaar digitaal display van 12,3 inch — navigatie, media en rijdata in scherp 3D-reliëf.">
+            <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M8 21h8"/></svg></span>
+            <span>Virtual cockpit</span>
+          </button>
+          <button class="feature-tile" data-feature="quattro" data-desc="Permanente vierwielaandrijving quattro® — optimale grip en tractie in elk weertype, op elk wegdek.">
+            <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg></span>
+            <span>Quattro</span>
+          </button>
+          <button class="feature-tile" data-feature="matrix" data-desc="Matrix LED-koplampen passen het lichtbeeld automatisch aan zonder andere weggebruikers te verblinden.">
+            <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-4h6l3 4h2"/><path d="M7 16h10"/></svg></span>
+            <span>Matrix LED</span>
+          </button>
+          <button class="feature-tile" data-feature="cruise" data-desc="Adaptive cruise assist houdt automatisch afstand, snelheid en positie binnen de rijstrook aan.">
+            <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></span>
+            <span>Cruise assist</span>
+          </button>
+          <button class="feature-tile" data-feature="sound" data-desc="Bang &amp; Olufsen 3D Sound System — een akoestische belevenis met studiokwaliteit aan boord.">
+            <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V6l8-3v15"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="15" r="3"/></svg></span>
+            <span>B&amp;O Sound</span>
+          </button>
+          <button class="feature-tile" data-feature="connect" data-desc="Audi connect navigatie met realtime verkeersinformatie en online diensten, altijd verbonden.">
+            <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+            <span>Audi connect</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WEBSHOP ===================== -->
+    <section id="webshop" class="relative py-28 px-6 bg-audi-charcoal/30">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="text-audi-red-bright text-xs uppercase tracking-[0.3em]">Webshop</span>
+            <h2 class="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">Onze voertuigen</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <select id="filter-fuel" class="filter-select">
+              <option value="all">Alle brandstoffen</option>
+              <option value="Benzine">Benzine</option>
+              <option value="Diesel">Diesel</option>
+              <option value="TFSI e quattro">TFSI e quattro</option>
+            </select>
+            <select id="sort-price" class="filter-select">
+              <option value="default">Sorteer op</option>
+              <option value="asc">Prijs: laag - hoog</option>
+              <option value="desc">Prijs: hoog - laag</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- ===================== PROMO ===================== -->
+    <section id="promo" class="relative py-24 px-6 overflow-hidden">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-audi-red/20 via-audi-black to-audi-black"></div>
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="relative rounded-3xl border border-audi-red-bright/30 bg-audi-panel/60 p-8 shadow-red-glow">
+          <span class="absolute -top-4 left-8 px-4 py-1.5 bg-audi-red-bright rounded-full text-[10px] uppercase tracking-widest font-bold">Actie van de maand</span>
+          <img src="%BASE_URL%assets/cars/audi-a1.svg" alt="Audi A1" class="w-full rounded-xl mb-6" />
+          <div class="flex items-center gap-4 mb-2">
+            <span class="text-audi-muted line-through text-lg">€ 28.999</span>
+            <span class="text-3xl md:text-4xl font-extrabold text-audi-red-bright">€ 24.999</span>
+          </div>
+          <p class="text-xs uppercase tracking-widest text-audi-offwhite/80 mb-1">Audi A1 — incl. btw</p>
+          <span class="inline-block px-3 py-1 bg-audi-red/20 border border-audi-red-bright/40 rounded-full text-[11px] uppercase tracking-wider text-audi-red-bright">Voordeel € 4.000</span>
+        </div>
+        <div>
+          <span class="text-audi-red-bright text-xs uppercase tracking-[0.3em]">Beperkte tijd</span>
+          <h2 class="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">Grijp uw kans op<br />de Audi A1</h2>
+          <p class="mt-5 text-audi-muted max-w-md">
+            Profiteer deze maand van een exclusieve prijsverlaging van € 4.000 op de Audi A1. Compact, wendbaar en
+            vol Audi-karakter — de ideale instap in het AUDI ELITE-gamma.
+          </p>
+          <div class="mt-8 flex items-center gap-4">
+            <div id="countdown" class="flex gap-3 text-center">
+              <div class="countdown-box"><span id="cd-days">00</span><label>Dagen</label></div>
+              <div class="countdown-box"><span id="cd-hours">00</span><label>Uur</label></div>
+              <div class="countdown-box"><span id="cd-mins">00</span><label>Min</label></div>
+              <div class="countdown-box"><span id="cd-secs">00</span><label>Sec</label></div>
+            </div>
+          </div>
+          <button class="mt-8 px-8 py-4 bg-audi-red-bright rounded-full text-xs uppercase tracking-widest font-semibold shadow-red-glow hover:scale-105 transition-all" data-open-quote="Audi A1">Vraag een offerte</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="py-20 px-6 border-y border-white/5 bg-audi-charcoal/40">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+        <div>
+          <p class="text-4xl md:text-5xl font-extrabold text-audi-red-bright"><span class="stat-count" data-target="1200" data-suffix="+">0</span></p>
+          <p class="mt-2 text-xs uppercase tracking-widest text-audi-muted">Wagens verkocht</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-extrabold text-audi-red-bright"><span class="stat-count" data-target="15" data-suffix=" jaar">0</span></p>
+          <p class="mt-2 text-xs uppercase tracking-widest text-audi-muted">Ervaring</p>
+        </div>
+        <div>
+          <p class="text-4xl md:text-5xl font-extrabold text-audi-red-bright"><span class="stat-count" data-target="4.9" data-decimal="1" data-suffix="★">0</span></p>
+          <p class="mt-2 text-xs uppercase tracking-widest text-audi-muted">Klantbeoordeling</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== VOORWAARDEN ===================== -->
+    <section id="voorwaarden" class="py-24 px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-audi-red-bright text-xs uppercase tracking-[0.3em]">Juridisch</span>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Algemene voorwaarden</h2>
+        </div>
+        <div class="accordion-group space-y-3">
+          <div class="accordion-item">
+            <button class="accordion-trigger">Retourrecht<svg class="acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="accordion-panel"><p>Retourrecht binnen de wettelijke voorwaarden.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Bedenktijd<svg class="acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="accordion-panel"><p>De bedenktijd bedraagt 14 dagen.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Levering<svg class="acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="accordion-panel"><p>Levering vindt plaats na volledige betaling.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Betaling<svg class="acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="accordion-panel"><p>Betaling via bankoverschrijving, leasing of financiering.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRIVACY ===================== -->
+    <section id="privacy" class="py-24 px-6 bg-audi-charcoal/30">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-audi-red-bright text-xs uppercase tracking-[0.3em]">GDPR</span>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Privacyverklaring</h2>
+        </div>
+        <div class="accordion-group space-y-3">
+          <div class="accordion-item">
+            <button class="accordion-trigger">Verzamelde gegevens<svg class="acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="accordion-panel"><p>Naam, adres, e-mailadres en telefoonnummer.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Doel<svg class="acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="accordion-panel"><p>Verkoop verwerken, offertes opmaken en klanten contacteren.</p></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Bescherming<svg class="acc-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="accordion-panel"><p>Conform de GDPR, beveiligde databanken, geen verkoop aan derden.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="py-24 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <span class="text-audi-red-bright text-xs uppercase tracking-[0.3em]">Contact</span>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight mb-8">Neem contact op</h2>
+
+          <ul class="space-y-4 mb-10 text-sm">
+            <li class="flex items-start gap-3"><span class="contact-icon">📍</span><span>Industrieweg 15, 9000 Gent</span></li>
+            <li class="flex items-start gap-3"><span class="contact-icon">✉️</span><a href="mailto:info@audielite.be" class="hover:text-audi-red-bright">info@audielite.be</a></li>
+            <li class="flex items-start gap-3"><span class="contact-icon">📞</span><a href="tel:+32470123456" class="hover:text-audi-red-bright">0470 12 34 56</a></li>
+          </ul>
+
+          <form id="contact-form" class="space-y-4">
+            <input required type="text" placeholder="Naam" class="form-input" />
+            <input required type="email" placeholder="E-mailadres" class="form-input" />
+            <input type="tel" placeholder="Telefoonnummer" class="form-input" />
+            <textarea required placeholder="Uw bericht" rows="4" class="form-input"></textarea>
+            <button type="submit" class="w-full px-6 py-4 bg-audi-red-bright rounded-full text-xs uppercase tracking-widest font-semibold shadow-red-glow hover:scale-[1.02] transition-all">Verstuur bericht</button>
+            <p id="contact-confirm" class="hidden text-sm text-audi-red-bright pt-2">✓ Bedankt! Uw bericht werd verzonden. Wij contacteren u zo snel mogelijk.</p>
+          </form>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-white/10 min-h-[420px]">
+          <iframe
+            title="AUDI ELITE op Google Maps — Gent"
+            src="https://www.google.com/maps?q=Industrieweg+15,+9000+Gent,+Belgi%C3%AB&output=embed"
+            class="w-full h-full min-h-[420px]" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="border-t border-white/10 bg-audi-charcoal/60 pt-16 pb-8 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <img src="%BASE_URL%assets/logo/audi-elite-logo-512.png" alt="Audi Elite" class="h-12 mb-4" />
+        <p class="text-xs text-audi-muted leading-relaxed">Driving Progress, Delivering Excellence.</p>
+      </div>
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-audi-red-bright mb-4">Bedrijfsgegevens</h4>
+        <ul class="text-xs text-audi-muted space-y-2 leading-relaxed">
+          <li>AUDI ELITE BV</li>
+          <li>Industrieweg 15, 9000 Gent</li>
+          <li>Ondernemingsnummer: 1087.654.321</li>
+          <li>Btw-nummer: BE 1087.654.321</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-audi-red-bright mb-4">Contact</h4>
+        <ul class="text-xs text-audi-muted space-y-2 leading-relaxed">
+          <li><a href="mailto:info@audielite.be" class="hover:text-audi-red-bright">info@audielite.be</a></li>
+          <li><a href="tel:+32470123456" class="hover:text-audi-red-bright">0470 12 34 56</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-audi-red-bright mb-4">Snelle links</h4>
+        <ul class="text-xs text-audi-muted space-y-2 leading-relaxed">
+          <li><a href="#voorwaarden" class="hover:text-audi-red-bright">Algemene voorwaarden</a></li>
+          <li><a href="#privacy" class="hover:text-audi-red-bright">Privacyverklaring</a></li>
+          <li><a href="#webshop" class="hover:text-audi-red-bright">Webshop</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto border-t border-white/5 pt-6 text-center text-[11px] text-audi-muted">
+      © 2026 AUDI ELITE BV — Industrieweg 15, 9000 Gent — BE 1087.654.321. Fictief project in het kader van een
+      academische oefening (vennootschapsrecht). Alle rechten voorbehouden.
+    </div>
+  </footer>
+
+  <!-- ===================== QUICK-VIEW MODAL ===================== -->
+  <div id="modal-overlay" class="fixed inset-0 z-[90] bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="modal-panel" class="absolute inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 top-6 md:top-10 bottom-6 md:bottom-10 max-w-4xl w-full md:w-[90%] bg-audi-charcoal border border-white/10 rounded-3xl overflow-y-auto scale-95 opacity-0 transition-all duration-300">
+      <button id="modal-close" class="sticky top-4 left-full -translate-x-12 z-10 w-9 h-9 rounded-full bg-audi-panel border border-white/10 flex items-center justify-center hover:bg-audi-red-bright transition">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div id="modal-content" class="px-6 md:px-10 pb-10 -mt-6"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
